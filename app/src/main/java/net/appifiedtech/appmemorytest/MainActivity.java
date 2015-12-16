@@ -55,4 +55,9 @@ public class MainActivity extends AppCompatActivity {
         fileRoot = getDir(FILE_PATH, Context.MODE_PRIVATE);
         return new File(fileRoot,FILE_NAME);
     }
+
+    public void downloadFile(View view) {
+        HTTP.HttpFileDownloader downloader = new HTTP.HttpFileDownloader(MainActivity.this);
+        downloader.execute();
+    }
 }
